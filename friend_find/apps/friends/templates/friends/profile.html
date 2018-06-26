@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Python Project</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'friends/css/bootstrap.css' %}">
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background-color: grey;
+			}
+			.intro{
+				border: 1px solid blue;
+				border-radius: 5px;
+				padding: 5px;
+				background-color: FF00FF;
+				box-shadow: 2px 2px 4px;
+			}
+			img{
+				width: 20%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="text-center">
+				<img class="img-fluid" src="{% static 'friends/img/snake.jpg' %}">
+				<h4>Anthony Dinh</h4>
+				<p>Age: 27</p>
+			</div>
+			<p>Likes: Sucking at games, snaking my way into girls pants, basketball, Pham</p>
+			<p class="intro">Introduction: Hi my name is Anthony, but every calls me Tony for some reason. It bugs me cause I prefer to be called by my given name from my parents. I have this stupid dog that no one likes called Bambi. I think he takes after me. I spent the last 10 years or so trying to snake my way into a this girl's pants but after a while that plan fell apart and I lost what little friends I had at the time. So here I am now looking for new friends to hang out and suck at games with. PS the girl in the picture is not my girlfriend, I tried snaking my way into her pants but she manhandled me.</p>
+		</div>
+	</body>
+</html>
