@@ -2,10 +2,10 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-<<<<<<< HEAD
-	url(r'^$', views.login),
-
-=======
+	url(r'^$', views.login, name = "login"),
+	url(r'register/$', views.register, name = "register"),
+	url(r'add_user/$', views.add_user, name = "profile"),
 	url(r'profile/$', views.profile, name = "profile"),
->>>>>>> ce0f850f09e09352cdfd8f27529f5cc43a565d3b
+	url(r'roll/$', views.roll, name = "roll"),
+	url(r'dice/$', views.dice, name = "dice"),
 ]
