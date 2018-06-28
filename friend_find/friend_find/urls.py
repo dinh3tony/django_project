@@ -17,10 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-<<<<<<< HEAD
 	url(r'^', include('apps.friends.urls')),
-=======
-	url(r'^', include("apps.friends.urls")),
->>>>>>> ce0f850f09e09352cdfd8f27529f5cc43a565d3b
     url(r'^admin/', admin.site.urls),
 ]

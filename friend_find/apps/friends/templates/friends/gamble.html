@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'ninja_gold/css/bootstrap.css' %}">
+
+		<style media="screen">
+		.gambling{
+			width: 200px;
+			height: 200px;
+			display: inline-block;
+			border: 1px solid black;
+		}
+
+		.activities {
+			overflow: scroll;
+			height: 200px;
+		}
+
+		.gambling h4{
+			margin-bottom: 100px !important;
+			margin-top: 20px;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+	<div class="jumbotron text-center">
+		<h1>Luck By Chance</h1>
+		<p class="text-left">Gold: {{ request.session.gold }}</p>
+
+		<div class="gambling">
+			<h4>Farm</h4>
+			<form action = "/ninja/process_money" method = "post">
+				{% csrf_token %}
+				<input type="hidden" name="building" value="farm" />
+		    	<input type="submit" value="Find Gold!"/>
+
+			</form>
+		</div>
+
+		<div class="gambling text-center">
+			<h4>Cave</h4>
+			<form action = "process_money" method = "post">
+				{% csrf_token %}
+				<input type="hidden" name="building" value="cave" />
+		    	<input type="submit" value="Find Gold!"/>
+
+			</form>
+		</div>
+
+		<div class="gambling text-center">
+			<h4>House</h4>
+			<form action = "/ninja/process_money" method = "post">
+				{% csrf_token %}
+				<input type="hidden" name="building" value="house" />
+		    	<input type="submit" value="Find Gold!"/>
+
+			</form>
+		</div>
+
+		<div class="gambling text-center">
+			<h4>Casino</h4>
+			<form action = "/ninja/process_money" method = "post">
+				{% csrf_token %}
+				<input type="hidden" name="building" value="casino" />
+		    	<input type="submit" value="Find Gold!"/>
+
+			</form>
+		</div>
+
+		<div>
+			<p>Activities:</p>
+			<div class="activities scroll">
+				<ul class='list-unstyled'>
+				{% for act in request.session.act %}
+				<li class='text-{{ act.color }}'> {{ act.gold }} ------- ({{ act.time }})
+				{% endfor %}
+				</ul>
+			</div>
+			<form action="/ninja/clear">
+				{% csrf_token %}
+				<input type="submit" name="reset" value="Reset">
+			</form>
+		</div>
+
+</body>
+</html>

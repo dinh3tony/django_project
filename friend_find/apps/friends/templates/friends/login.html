@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>Login Page</title>
 	{% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'jobs/css/bootstrap.css' %}">
-    <style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<style>
 
     	* {
     		margin: 0px;
@@ -14,43 +16,44 @@
     	.main {
     		border: 1px solid black;
     		box-shadow: 10px 10px;
-    		height: 400px;
-    		width: 600px;
+    		min-height: 400px;
+    		width: 400px;
+    		top: 300px;
     		position: relative;
     		align-content: center;
-    		top: 250px;
-    		left: 450px;
     		border-radius: 5px;
     		background-color: white;
+    		display: inline-block;
     	}
-
     	.inside {
-    		width: 400px;
+    		width: 70%;
+    		top: 75px;
     		position:relative;
-    		top: 80px;
     		align-content:center;
-    		left: 170px;
+
+    		display: inline-block;
     	}
 
-    	.container {
-    		height: 900px;
-    		align-content: center;
-    		align-items: center;
+    	.back {
+    		min-height: 970px;
+    		width: 100%;
     		background-image:url({% static 'friends/images/login_page.jpg' %});
+    		background-position: center; 
     		background-size: cover;
+    		background-repeat: no-repeat;
     	}
 
 	</style>
 
 </head>
 <body>
-	<div class='container col-lg-12'>
+	<div class='back container-fluid text-center'>
 		<div class='main'>
 			<div class='inside'>
-				<h1> Login Here!</h1>
-				<form class='form-horizontal' action='success' method="post">
+				<h1 > Login Here!</h1>
+				<form class='' action='login/' >
 				{% csrf_token %}
-					<label for='inputEmail' class='col-lg-8 '><u><strong>Email</strong></u> </label>       
+					<label for='inputEmail' class='col-lg-8 col-sm-12 '><u><strong>Email</strong></u> </label>       
 				{% if messages %}
 				{% for msg in messages %}
 				{% if msg.tags %}
@@ -58,14 +61,14 @@
 				{% endif %}
 				{% endfor %}
 				{% endif %}
-					<div class='col-lg-8'>
+					<div class='text-center offset-lg-2 col-lg-8 col-xs-12'>
 						<input type='text' name='boob' class='form-control' placeholder='Email' value="">
 					</div>
 					<label for='password' class='col-lg-8 '><u><strong>Password</strong></u></label>
-					<div class='col-lg-8'>
+					<div class='text-center offset-lg-2 col-lg-8'>
 						<input type='password' name='chick' class='form-control' placeholder='Password' value="">
 					</div>
-					<div class='col-lg-8'>
+					<div class='text-center offset-lg-2 col-lg-8'>
 						<input class="btn btn-primary btn-block" type="submit" value="Submit">
 					</div>
 					<div>

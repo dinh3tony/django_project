@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	{% load static %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.container {
+/*			background-color: #0d1a3a; */
+    		height: 970px;
+    		background-image:url({% static 'friends/images/back1.png' %});
+    		background-position: center; 
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    	}
+
+    	.like {
+    		color:white;
+    	}
+
+    	.img1 {
+    		max-width: 400px;
+    		height: 300px;
+    		display:inline-block;
+    		vertical-align: top;
+    	}
+
+    	.main {
+    		display: inline-block;
+    	}
+
+    	.img2 {
+
+    	}
+
+    	.header{
+    		color: white;
+    	}
+
+    	.intro {
+    		color:white;
+    	}
+
+    	.story {
+    		vertical-align: top;
+    	}
+	</style>
+</head>
+<body>
+	<div class='container col-lg-12 '>
+		
+			{% csrf_token %}
+			<div class='header'>
+				<div>
+					<h1 class='header'> Edit your Profile</h1>
+				</div>
+				<div class='offset-lg-4'>
+					<a class='col-lg-3' href='/dashboard'>Back</a>
+					<a href='/clear'>Logout</a>
+				</div>
+			</div>
+			<div class='main col-lg-6 d-inline-block'>
+				<form class='form-horizontal' action='edit/' method='post'>
+				<label for='title' class='like col-lg-2'> Likes:</label>
+				<textarea type="textarea" class='form-control col-lg-6' name="likes" rows="6"></textarea>
+				<label for="details" class='col-lg-2 intro'> Introduction:</label>
+				<textarea type="textarea" class='form-control col-lg-6' name="details" rows="6"></textarea>
+				<div class='col-lg-2 offset-lg-2 col-md-4 col-sm-4'>
+					<input class='btn btn-primary btn-block' type='submit' value="Submit">
+				</div>
+			</div>
+			<div class='story col-lg-2 d-inline-block'>
+				<img class='img1 img-fluid d-inline-block' src='{% static 'friends/images/story.jpeg' %}'>
+<!-- 				<img class='img2 ' src='{% static 'friends/images/storie.jpg' %}'> -->
+			</div>
+
+		</form>
+	</div>
+
+</body>
+</html>

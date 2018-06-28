@@ -1,13 +1,23 @@
 from django.shortcuts import render, HttpResponse, redirect
-<<<<<<< HEAD
-
-def login(request):
-	return render(request, "friends/login.html")
-=======
 from django.core.urlresolvers import reverse
 
-# Create your views here.
+
+def index(request):
+	print("*******************************")
+	return render(request, "friends/login.html")
+
+def success(request):
+	print("This is the login page, it went through")
+	return redirect('/wall/')
+
+def wall(request):
+	return render(request, "friends/wall.html")
+
+def clear(request):
+	return redirect('/')
+
+def page(request):
+	return render(request, "friends/edit.html")
 
 def profile(request):
 	return render(request, "friends/profile.html")
->>>>>>> ce0f850f09e09352cdfd8f27529f5cc43a565d3b

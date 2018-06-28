@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Wall</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	{% load static %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <style>
+    	* {
+    		margin: 0px;
+    		padding: 0px;
+    	}
+    	.name {
+    		display:inline-block;
+    		width: 300px;
+    		color:white;
+    	}	
+
+    	.profile {
+    		width: 100%;
+    	}
+
+    	.pic {
+    		height: 450px;
+    		border: 3px solid black;
+    		max-width: 450px;
+    	}
+
+    	.img1 {
+    		width: 100%;
+    	}
+
+    	.header  {
+/*    		background-image:url({% static 'friends/images/logo.png' %});*/
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		min-height: 310px;
+    		width: 100%;
+    	}
+
+    	.info {
+    		border: 3px solid black;
+    		vertical-align: top;
+    		background-color: white;
+    		color: darkblue;
+    		min-height: 400px;
+
+    	}
+
+    	.container {
+/*    		background-image:url({% static 'friends/images/date.jpg' %});
+    		background-position: center; 
+    		background-size: cover;
+    		background-repeat: no-repeat;*/
+    		background-image:url({% static 'friends/images/back2.png' %});
+    		background-position: center; 
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		min-height: 970px;
+    	}
+
+    	.bar {
+    		vertical-align: top;
+    		border-bottom: 3px solid black;
+    		min-height: 50px;
+    		width: 100%;
+/*    		position: relative;*/
+    	}
+
+    	.nav {
+    		min-width: 150px;
+    		font-size: 22px;
+    		position: relative;
+    		/*left: 75px;*/
+    	}
+    	.mytabru {
+    		background-color: white;
+    	}
+
+    	.logo {
+    		width: 100%;
+    	}
+    </style>
+</head>
+<body>
+	<div class='container col-lg-12'>
+		<div class='header col-lg-12 col-md-12 col-sm-12'>
+			<div class='logo'>
+				<img class='col-lg-12' src='{% static 'friends/images/logo2.png' %}'>
+			</div>
+			<div class='row col-lg-12'>
+			</div>
+		</div>
+		<div class='main col-lg-12'>
+			<div class='col-lg-6'>
+				<h2 class='name col-sm-12 offset-lg-2 offset-md-4 offset-sm-4'> Kevin Pham (Coins: 40)</h2>
+			</div>
+			<div class='profile col-lg-4 col-md-12 d-inline-block'>
+<!-- 				<div class='pic col-lg-6 offset-md-6 col-sm-12'> -->
+					<img class='img1'src='{% static 'friends/images/pham.jpg' %}'>
+<!-- 				</div> -->
+			</div>
+
+			<div class='col-lg-6 col-sm-12 offset-lg-1 d-inline-block info'>
+				<div class='bar col-lg-12 col-md-12 col-sm-12'>
+					<div class='nav d-inline-block col-lg-1 col-sm-12 col-md-12'> Profile </div>
+					<div class='nav d-inline-block col-lg-1 col-sm-12 col-md-12'> Roll </div>
+					<div class='nav d-inline-block col-lg-1 col-sm-12 col-md-12'> Gamble </div>
+					<div class='nav d-inline-block col-lg-1 col-sm-12 col-md-12'> Logout </div>
+				</div>
+				<p class='d-inline-block'><h4>Age: </h4> 28</p>
+				<p><h4> Likes: </h4> Animated Waifus only, games, anime, basketball. I will also tell you what I dislike: 3D girls, cooties, anything that makes other people happy </p>
+				<p><h4> Introduction: </h4> I like to stay at home and play games, eat and get fat. I will do anything for milk tea. I love my friends and my friend's dog, Bambi. I just want someone to play games with me for 10 hours. Boy or girl, I don't mind either. I just need some social interaction. I am also 5' 5". Those are two different measurements.  
+			</div>
+		</div>
+		<div class='friends'>
+			<table class='mytabru table table-striped table-bordered table-hover '>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Messages</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Britney Spears</td>
+						<td>36</td>
+						<td>
+							<a href='messages'>1 message(s)</a>
+						</td>
+						<td>
+							<a href='profile/'>View</a>
+							<a href='send/'>Gift</a>
+							<a href='delete/'>End</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Aqua</td>
+						<td>???</td>
+						<td>
+							<a href='messages'>1000 messages(s)</a>
+						</td>
+						<td>
+							<a href='profile/'>View</a>
+							<a href='send/'>Gift</a>
+							<a href='delete/'>End</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Goku</td>
+						<td>53</td>
+						<td>
+							<a href='messages'>5 message(s)</a>
+						</td>
+						<td>
+							<a href='profile/'>View</a>
+							<a href='send/'>Gift</a>
+							<a href='delete/'>End</a>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
